@@ -1,0 +1,11 @@
+public class Solution {
+    public int ClimbStairs(int n) {     
+        int a=1, b=1;
+        for (int i=0; i< n-1;i++) {
+            int t = a;
+            a = a + b;
+            b = t;
+        }
+        return a;
+    }
+}
