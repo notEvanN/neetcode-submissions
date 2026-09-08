@@ -1,0 +1,25 @@
+public class Solution {
+    public int[] PlusOne(int[] digits) {
+        bool c = true;
+        for (int i = digits.Length -1; i>=0; i--) {
+            if (c) {
+                if (digits[i] == 9) {
+                    digits[i] = 0;
+                } else {
+                    digits[i]++;
+                    c = false;
+                }
+            }
+        }
+        if (c) {
+            int[] res = new int[digits.Length + 1];
+            res[0] = 1;
+            for (int i = 0; i <digits.Length; i++) {
+                res[i + 1] = digits[i];
+            }
+            return res;
+        }
+        return digits;
+        
+    }
+}
